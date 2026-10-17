@@ -40,8 +40,13 @@ class SimulationView(context:Context):View(context){
      paint.color=Color.HSVToColor(floatArrayOf(hue,0.75f,0.85f));canvas.drawRect(x*w/12,y*h/18,(x+1)*w/12+1,(y+1)*h/18+1,paint)}
     label(canvas,"VIDEO-LIKE / animated frames (no codec)",w)
    }
-   else->{paint.color=Color.LTGRAY;paint.textSize=25f;canvas.drawText("IDLE: no synthetic workload",24f,h/2)}
-  }
+  
+else -> {
+    paint.color = Color.LTGRAY
+    paint.textSize = 25f
+    canvas.drawText("IDLE: no synthetic workload", 24f, h / 2f, paint)
+}
+
   lastDraw=now
   postInvalidateDelayed(33L)
  }
